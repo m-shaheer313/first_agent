@@ -20,4 +20,10 @@ result = agent.invoke(
     {"messages": [{"role": "user", "content": "What is the weather like in London?"}]}
 )
 
-print(result["messages"][-1].content)
+# print(result["messages"][-1].content)
+
+for m in result["messages"]:
+    m.pretty_print()
+
+ai_msg = result["messages"][1]
+print(ai_msg.tool_calls)  # This will print the tool call made by the AI
