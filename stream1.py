@@ -20,7 +20,7 @@ agent = create_agent(
 
 question = {
     "messages" : [{"role" : "user",
-    "content" : "Write three facts about Cristiano Ronaldo."}]
+    "content" : "What's the weather like in New York City?"}]
 }
 
 
