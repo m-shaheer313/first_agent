@@ -25,7 +25,8 @@ first_agent/
 ├── messages1.py       # Chat model invocation, message schemas, and multi-turn memory
 ├── tools1.py          # @tool decorator, multi-tool binding, and schema inspection
 ├── tools2.py          # Docstring-based tool routing (pricing & stock inventory)
-└── stream1.py         # Agent streaming modes (values, updates, and messages)
+├── stream1.py         # Agent streaming modes (values, updates, and messages)
+└── memory1.py         # Checkpointer memory with InMemorySaver and thread_id
 ```
 
 ---
@@ -56,6 +57,11 @@ Demonstrates the three core streaming modes available in `agent.stream`:
 - **`stream_mode="values"`**: Streams full conversation state step-by-step.
 - **`stream_mode="updates"`**: Streams state updates produced by individual graph nodes.
 - **`stream_mode="messages"`**: Streams token-by-token text output in real-time (`token.text`).
+
+### 6. [`memory1.py`](memory1.py) — Checkpointer Memory with Threads
+- Uses `InMemorySaver` checkpointer with `create_agent`.
+- Manages independent conversation sessions using `configurable: {"thread_id": "..."}`.
+- Demonstrates state persistence across turns within a thread and isolation across distinct threads.
 
 ---
 
@@ -120,6 +126,9 @@ python tools2.py
 
 # Streaming tokens, node updates, and state values
 python stream1.py
+
+# Thread-based memory persistence with checkpointer
+python memory1.py
 ```
 
 > [!NOTE]
