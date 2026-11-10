@@ -28,7 +28,8 @@ first_agent/
 ├── stream1.py         # Agent streaming modes (values, updates, and messages)
 ├── memory1.py         # Checkpointer memory with InMemorySaver and thread_id
 ├── structured1.py     # Structured response extraction using Pydantic models
-└── questions1.py      # Pydantic validation, schema inspection & structured vs plain agent comparison
+├── questions1.py      # Pydantic validation, schema inspection & structured vs plain agent comparison
+└── context1.py        # Runtime context injection into tools with ToolRuntime and context_schema
 ```
 
 ---
@@ -74,6 +75,12 @@ Demonstrates the three core streaming modes available in `agent.stream`:
 - Demonstrates Pydantic field constraints (`ge=0, le=100`, optional fields) and `ValidationError` handling.
 - Inspects generated JSON schema using `model_json_schema()`.
 - Contrasts plain agents (returning unstructured text in `messages`) with structured agents (returning typed Pydantic instances in `structured_response`).
+
+### 9. [`context1.py`](context1.py) — Runtime Context Injection
+- Demonstrates injecting server-side runtime context (`ToolRuntime[Context]`) into tools.
+- Defines a dataclass `Context(user_id=...)` configured via `context_schema = Context`.
+- Context parameters are securely provided at runtime and hidden from the LLM tool parameter schema (`get_balance.args`).
+- Enables secure multi-tenant scoping and per-user state lookups (`agent.invoke(..., context=Context(...))`).
 
 ---
 
@@ -147,6 +154,9 @@ python structured1.py
 
 # Pydantic validation & agent comparison
 python questions1.py
+
+# Runtime context injection into tools
+python context1.py
 ```
 
 > [!NOTE]
