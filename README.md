@@ -1,12 +1,32 @@
-# Learn LangChain Agents - Complete Agent & Tools Playground
+<div align="center">
 
-A practical hands-on guide and exploration of building autonomous AI agents, custom tools, conversation memory, and real-time streaming with **LangChain 1.4+** in Python.
+# 🚀 Learn LangChain Agents
+### *The Hands-On Engineering Playground for Autonomous AI Agents, Tools, Memory & Streaming*
+
+[![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![LangChain](https://img.shields.io/badge/LangChain-1.4+-1C3C3C?style=flat&logo=chainlink&logoColor=white)](https://python.langchain.com/)
+[![Package Manager](https://img.shields.io/badge/Package%20Manager-uv-DE5FE9?style=flat)](https://github.com/astral-sh/uv)
+[![Architecture](https://img.shields.io/badge/Architecture-Agentic%20Workflows-00C49F?style=flat)](https://github.com/m-shaheer313/learn-langchain-agents)
+
+<p align="center">
+  A code-first, zero-fluff repository for mastering production-ready agentic patterns with <b>LangChain 1.4+</b>.<br>
+  Step through practical implementations covering custom tool definitions, intelligent docstring routing, multi-turn state persistence, structured Pydantic extractions, real-time token streaming, and multi-tenant runtime context injection.
+</p>
+
+</div>
 
 ---
 
-## Overview
+## 🌟 Key Capabilities at a Glance
 
-This repository demonstrates modern agentic workflows powered by LangChain. It covers foundational agent patterns from simple tool-calling agents to multi-turn conversation memory, dynamic tool routing based on docstrings, and streaming tokens/state updates.
+| Capability | Description | Core Script |
+| :--- | :--- | :--- |
+| **Autonomous Tool Calling** | Dynamic function calling with typed parameters & LLM docstring schemas | [`agent1.py`](agent1.py), [`tools1.py`](tools1.py) |
+| **Docstring-Driven Routing** | Natural language routing between domain-specific tools | [`tools2.py`](tools2.py) |
+| **Multi-Turn Memory** | Stateful conversation retention via `InMemorySaver` checkpointer & `thread_id` | [`memory1.py`](memory1.py), [`messages1.py`](messages1.py) |
+| **Structured Output Extraction** | Strict entity extraction directly into Pydantic models with validation | [`structured1.py`](structured1.py), [`questions1.py`](questions1.py) |
+| **Real-Time Streaming** | Live token generation (`messages`), state values, and node updates | [`stream1.py`](stream1.py) |
+| **Runtime Context Injection** | Server-side `ToolRuntime` context injection for secure multi-tenant scoping | [`context1.py`](context1.py) |
 
 ---
 
