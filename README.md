@@ -37,6 +37,7 @@ learn-langchain-agents/
 ├── .env.example       # Template for environment variables
 ├── .gitignore         # Ignores .venv, .env, __pycache__, etc.
 ├── .python-version    # Python 3.12 specification
+├── LICENSE            # MIT License
 ├── pyproject.toml     # Project metadata and dependencies
 ├── README.md          # Project documentation
 ├── uv.lock            # Lockfile for reproducible dependencies
@@ -182,3 +183,10 @@ python context1.py
 > [!NOTE]
 > ### Model Recommendations for OpenAI API
 > - **`gpt-6-luna`**: OpenAI's recommended high-efficiency, cost-effective model for fast and high-volume tasks. Pricing is **$0.10 per 1M input tokens** and **$0.50 per 1M output tokens** with a **1,050,000-token context window**.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
