@@ -27,7 +27,8 @@ first_agent/
 ├── tools2.py          # Docstring-based tool routing (pricing & stock inventory)
 ├── stream1.py         # Agent streaming modes (values, updates, and messages)
 ├── memory1.py         # Checkpointer memory with InMemorySaver and thread_id
-└── structured1.py     # Structured response extraction using Pydantic models
+├── structured1.py     # Structured response extraction using Pydantic models
+└── questions1.py      # Pydantic validation, schema inspection & structured vs plain agent comparison
 ```
 
 ---
@@ -68,6 +69,11 @@ Demonstrates the three core streaming modes available in `agent.stream`:
 - Defines strongly-typed schemas using Pydantic (`ContactInfo`).
 - Configures `create_agent` with `response_format = ContactInfo`.
 - Extracts structured entity data (`name`, `email`, `phone`) from unstructured natural language text accessible via `result["structured_response"]`.
+
+### 8. [`questions1.py`](questions1.py) — Validation & Agent Response Comparison
+- Demonstrates Pydantic field constraints (`ge=0, le=100`, optional fields) and `ValidationError` handling.
+- Inspects generated JSON schema using `model_json_schema()`.
+- Contrasts plain agents (returning unstructured text in `messages`) with structured agents (returning typed Pydantic instances in `structured_response`).
 
 ---
 
@@ -138,6 +144,9 @@ python memory1.py
 
 # Structured response extraction with Pydantic
 python structured1.py
+
+# Pydantic validation & agent comparison
+python questions1.py
 ```
 
 > [!NOTE]
