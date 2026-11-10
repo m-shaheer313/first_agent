@@ -26,7 +26,8 @@ first_agent/
 ├── tools1.py          # @tool decorator, multi-tool binding, and schema inspection
 ├── tools2.py          # Docstring-based tool routing (pricing & stock inventory)
 ├── stream1.py         # Agent streaming modes (values, updates, and messages)
-└── memory1.py         # Checkpointer memory with InMemorySaver and thread_id
+├── memory1.py         # Checkpointer memory with InMemorySaver and thread_id
+└── structured1.py     # Structured response extraction using Pydantic models
 ```
 
 ---
@@ -62,6 +63,11 @@ Demonstrates the three core streaming modes available in `agent.stream`:
 - Uses `InMemorySaver` checkpointer with `create_agent`.
 - Manages independent conversation sessions using `configurable: {"thread_id": "..."}`.
 - Demonstrates state persistence across turns within a thread and isolation across distinct threads.
+
+### 7. [`structured1.py`](structured1.py) — Structured Output Extraction
+- Defines strongly-typed schemas using Pydantic (`ContactInfo`).
+- Configures `create_agent` with `response_format = ContactInfo`.
+- Extracts structured entity data (`name`, `email`, `phone`) from unstructured natural language text accessible via `result["structured_response"]`.
 
 ---
 
@@ -129,6 +135,9 @@ python stream1.py
 
 # Thread-based memory persistence with checkpointer
 python memory1.py
+
+# Structured response extraction with Pydantic
+python structured1.py
 ```
 
 > [!NOTE]
