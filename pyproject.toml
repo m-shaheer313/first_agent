@@ -1,7 +1,7 @@
 [project]
-name = "first-agent"
+name = "learn-langchain-agents"
 version = "0.1.0"
-description = "Add your description here"
+description = "Comprehensive guide and hands-on examples for learning LangChain agents, tools, memory, and streaming"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

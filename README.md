@@ -1,4 +1,4 @@
-# First Agent - LangChain Agent & Tools Playground
+# Learn LangChain Agents - Complete Agent & Tools Playground
 
 A practical hands-on guide and exploration of building autonomous AI agents, custom tools, conversation memory, and real-time streaming with **LangChain 1.4+** in Python.
 
@@ -13,7 +13,7 @@ This repository demonstrates modern agentic workflows powered by LangChain. It c
 ## Project Structure
 
 ```text
-first_agent/
+learn-langchain-agents/
 ├── .env.example       # Template for environment variables
 ├── .gitignore         # Ignores .venv, .env, __pycache__, etc.
 ├── .python-version    # Python 3.12 specification
@@ -96,8 +96,8 @@ Demonstrates the three core streaming modes available in `agent.stream`:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/m-shaheer313/first_agent.git
-   cd first_agent
+   git clone https://github.com/m-shaheer313/learn-langchain-agents.git
+   cd learn-langchain-agents
    ```
 
 2. **Install dependencies**:
