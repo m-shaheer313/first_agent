@@ -180,4 +180,5 @@ python context1.py
 ```
 
 > [!NOTE]
-> **Model Configuration:** The code examples use `gpt-6-luna` as a placeholder model identifier. For live production use with OpenAI's API, replace this with an active model such as `gpt-4o` or `gpt-4o-mini` in the respective script.
+> ### Model Recommendations for OpenAI API
+> - **`gpt-6-luna`**: OpenAI's recommended high-efficiency, cost-effective model for fast and high-volume tasks. Pricing is **$0.10 per 1M input tokens** and **$0.50 per 1M output tokens** with a **1,050,000-token context window**.
