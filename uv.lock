@@ -174,21 +174,6 @@ wheels = [
 ]
 
 [[package]]
-name = "first-agent"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "langchain", extra = ["openai"] },
-    { name = "python-dotenv" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "langchain", extras = ["openai"], specifier = ">=1.4.9" },
-    { name = "python-dotenv", specifier = ">=1.2.4" },
-]
-
-[[package]]
 name = "h11"
 version = "0.16.0"
 source = { registry = "https://pypi.org/simple" }
@@ -542,6 +527,21 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/12/4b/c91526e3038d5d5869fa5dba647215826fb8b2b8a3c042d20581a3e5d735/langsmith-0.14.17.tar.gz", hash = "sha256:53efa2db8293d0a8d60efebe0945c595b635873774b302066ed0a746ddf87562", size = 5106102, upload-time = "2026-11-02T00:58:45.943Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a8/11/4da3faa7fd20c487c4770f14aa2b4247871e787ad305c2ba528fcf0f2bcc/langsmith-0.14.17-py3-none-any.whl", hash = "sha256:0aa2c79936c93c7cea9c55656f05e21cc5da715fecbdbda439d084adc08429be", size = 940828, upload-time = "2026-11-02T00:58:43.727Z" },
+]
+
+[[package]]
+name = "learn-langchain-agents"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "langchain", extra = ["openai"] },
+    { name = "python-dotenv" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "langchain", extras = ["openai"], specifier = ">=1.4.9" },
+    { name = "python-dotenv", specifier = ">=1.2.4" },
 ]
 
 [[package]]
