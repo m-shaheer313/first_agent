@@ -27,6 +27,7 @@
 | **Structured Output Extraction** | Strict entity extraction directly into Pydantic models with validation | [`structured1.py`](structured1.py), [`questions1.py`](questions1.py) |
 | **Real-Time Streaming** | Live token generation (`messages`), state values, and node updates | [`stream1.py`](stream1.py) |
 | **Runtime Context Injection** | Server-side `ToolRuntime` context injection for secure multi-tenant scoping | [`context1.py`](context1.py) |
+| **Dynamic Prompt Middleware** | Context-driven system prompt generation via `@dynamic_prompt` middleware & privacy guardrails | [`context2.py`](context2.py) |
 
 ---
 
@@ -50,7 +51,8 @@ learn-langchain-agents/
 ├── memory1.py         # Checkpointer memory with InMemorySaver and thread_id
 ├── structured1.py     # Structured response extraction using Pydantic models
 ├── questions1.py      # Pydantic validation, schema inspection & structured vs plain agent comparison
-└── context1.py        # Runtime context injection into tools with ToolRuntime and context_schema
+├── context1.py        # Runtime context injection into tools with ToolRuntime and context_schema
+└── context2.py        # Dynamic prompt middleware with @dynamic_prompt and user privacy guardrails
 ```
 
 ---
@@ -102,6 +104,11 @@ Demonstrates the three core streaming modes available in `agent.stream`:
 - Defines a dataclass `Context(user_id=...)` configured via `context_schema = Context`.
 - Context parameters are securely provided at runtime and hidden from the LLM tool parameter schema (`get_balance.args`).
 - Enables secure multi-tenant scoping and per-user state lookups (`agent.invoke(..., context=Context(...))`).
+
+### 10. [`context2.py`](context2.py) — Dynamic Prompt Middleware & Guardrails
+- Implements dynamic, per-request system prompts via the `@dynamic_prompt` decorator and `ModelRequest`.
+- Reads `request.runtime.context.user_id` to dynamically customize instructions to serve only the authenticated user.
+- Enforces strict privacy guardrails: explicitly instructs the agent to politely refuse inquiries regarding other users' accounts and avoid invoking tools unauthorizedly.
 
 ---
 
@@ -178,6 +185,9 @@ python questions1.py
 
 # Runtime context injection into tools
 python context1.py
+
+# Dynamic prompt middleware with privacy guardrails
+python context2.py
 ```
 
 > [!NOTE]
